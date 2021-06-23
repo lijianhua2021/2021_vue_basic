@@ -17,6 +17,10 @@
     <h1>Hello,{{ school.name.toUpperCase() }}</h1>
     <h1>学校坐落在：{{ school.address}}</h1>
     <h1>我学的学科：{{ school.subject()}}</h1>
+    <hr/>
+    <h1>{{ school.name,school.address }}</h1><!-- 最终展示name 1.不是报错error，需搞清楚表达式（能返回值的语句是表达式）  -->
+    <h1>{{school.name && school.address}}</h1> <!--最终展示address-->
+    <h1>{{school.name? 1:2}}</h1>  <!--最终展示1-->
   </div>
   <script type="text/javascript">
   //创建一个Vue的实例对象,并传入配置对象
