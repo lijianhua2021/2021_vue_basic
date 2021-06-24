@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>MVVM模型</title>
+  <script type="text/javascript" src="../js/vue.js"></script>
+</head>
+<body>
+  <div id="root">
+    <h2>Hello,{{msg}}</h2>
+    <h2>地址是：{{address}}</h2>
+  </div>
+  <script type="text/javascript">
+     // el的第一种写法（常用）
+/*  new Vue({
+       el:'#root',
+       //data的第一种写法，data是一个对象
+       data:{
+         msg:'尚硅谷',
+         address:'宏福科技园综合楼'
+       }
+     }) */
+
+     //el的第二种写法（不常用）
+     const vm = new Vue({
+       //data在第二种写法，data是一个函数，返回数据对象（组件中用的多）
+       data(){   //特别注意：data不要写成带箭头函数，要写成普通函数，否则this的指向是Windows了，而不是Vue的实例对象。
+         console.log(this)
+         return {
+           msg:'尚硅谷',
+           address:'宏福科技园综合楼'
+         }
+       }
+     })
+     vm.$mount('#root')
+  </script>
+</body>
+</html>
